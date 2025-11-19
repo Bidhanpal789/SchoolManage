@@ -1,0 +1,54 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title>
+        <asp:ContentPlaceHolder ID="title" runat="server">
+        </asp:ContentPlaceHolder>
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0d6efd">
+
+    <%--fonts--%>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Story+Script&display=swap" rel="stylesheet">
+    <%--CSS--%>
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="assets/css/Style.css" rel="stylesheet" />
+    <%--icons--%>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div class="container-fluid m-0 p-0">
+            <nav class="navbar navbar-expand-lg bg-primary px-lg-5 shadow-lg sticky-top" data-bs-theme="dark">
+                <div class="container-fluid">
+                    <a class="navbar-brand story-script-regular" href="Default.aspx">School<span class="text-warning">Nest</span>  </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <asp:ContentPlaceHolder ID="NavbarLIst" runat="server">
+                        </asp:ContentPlaceHolder>
+                    </div>
+                </div>
+            </nav>
+            <asp:ContentPlaceHolder ID="Body" runat="server">
+            </asp:ContentPlaceHolder>
+            <section>
+                <div class="card-footer py-1 bg-dark align-bottom">
+                    <div class="d-flex justify-content-center align-content-center">
+                        <p class="text-white pt-3">Copyright &copy; 2025 SchoolNest. All rights reserved.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </form>
+
+    <%--JS--%>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

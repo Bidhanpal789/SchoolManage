@@ -1,0 +1,167 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Admin.master.cs" Inherits="AdminPanel_Admin" %>
+
+<!DOCTYPE html>
+<html>
+<head runat="server">
+    <title>
+        <asp:ContentPlaceHolder ID="title" runat="server"></asp:ContentPlaceHolder>
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <!-- CSS -->
+    <link href="../assets/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../assets/css/AdminCss.css" rel="stylesheet" />
+    <link href="../assets/css/Admin.css" rel="stylesheet" />
+
+    <!-- Icons -->
+    <link href="https://cdn.lineicons.com/5.0/lineicons.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
+
+
+    <!-- Extra Head Content -->
+    <asp:ContentPlaceHolder ID="head" runat="server"></asp:ContentPlaceHolder>
+</head>
+<body style="overflow: hidden">
+    <form id="form1" runat="server">
+        <div class="d-flex overflow-hidden">
+
+            <!-- Sidebar -->
+            <!-- Sidebar -->
+            <aside id="sidebar" class="sidebar-toggle no-print" style="height: 100vh">
+                <div class="sidebar-logo">
+                    <img src="../assets/images/logo-white.png" alt="SchoolNest Logo" />
+                    <a href="Default.aspx">School<span class="text-warning">Nest</span></a>
+                </div>
+                <hr class="p-0 m-0 text-light mb-2" />
+
+                <!-- Navigation -->
+                <ul class="sidebar-nav">
+
+                    <!-- Dashboard -->
+                    <li class="sidebar-item">
+                        <a href="Dashboard.aspx" class="sidebar-link">
+                            <i class="lni lni-home-2 p-1 pe-2"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+
+                    <!-- Student Section -->
+                    <li class="sidebar-item">
+                        <a href="#Student" class="sidebar-link dropdown-toggle collapsed" data-bs-toggle="collapse" aria-expanded="false">
+                            <i class="lni lni-user-4 p-1 pe-2"></i>
+                            <span>Student</span>
+                            <i class="lni lni-chevron-down ms-auto dropdown-icon"></i>
+                        </a>
+                        <ul id="Student" class="collapse sidebar-dropdown">
+                            <li><a href="StudentEntry.aspx" class="sidebar-link"><i class="lni lni-plus p-1 pe-2"></i>Add Student</a></li>
+                            <li><a href="UpdateStudent.aspx" class="sidebar-link"><i class="lni lni-refresh-user-1 p-1 pe-2"></i>Edit Student</a></li>
+                            <li><a href="ShowAll.aspx" class="sidebar-link"><i class="lni lni-monitor p-1 pe-2"></i>Show All</a></li>
+                        </ul>
+                    </li>
+
+                    <!-- Subject Section -->
+                    <li class="sidebar-item">
+                        <a href="#Subject" class="sidebar-link dropdown-toggle collapsed" data-bs-toggle="collapse" aria-expanded="false">
+                            <i class="lni lni-book-1 p-1 pe-2"></i>
+                            <span>Subject</span>
+                            <i class="lni lni-chevron-down ms-auto dropdown-icon"></i>
+                        </a>
+                        <ul id="Subject" class="collapse sidebar-dropdown">
+                            <li><a href="SubjectEntry.aspx" class="sidebar-link"><i class="lni lni-plus p-1 pe-2"></i>Add Subject</a></li>
+                            <li><a href="UpdateSubject.aspx" class="sidebar-link"><i class="lni lni-cloud-refresh-clockwise p-1 pe-2"></i>Edit Subject</a></li>
+                            <li><a href="SubjectMarks.aspx" class="sidebar-link"><i class="lni lni-file-plus-circle p-1 pe-2"></i>Subject Marks</a></li>
+                            <li><a href="ShowAllSubjects.aspx" class="sidebar-link"><i class="lni lni-monitor p-1 pe-2"></i>Show All</a></li>
+                        </ul>
+                    </li>
+
+                    <!-- Marks Section -->
+                    <li class="sidebar-item">
+                        <a href="#Marks" class="sidebar-link dropdown-toggle collapsed" data-bs-toggle="collapse" aria-expanded="false">
+                            <i class="lni lni-file-pencil p-1 pe-2"></i>
+                            <span>Marks</span>
+                            <i class="lni lni-chevron-down ms-auto dropdown-icon"></i>
+                        </a>
+                        <ul id="Marks" class="collapse sidebar-dropdown">
+                            <li><a href="MarksEntry.aspx" class="sidebar-link"><i class="lni lni-file-plus-circle p-1 pe-2"></i>Marks Entry</a></li>
+                            <li><a href="UpdateMarks.aspx" class="sidebar-link"><i class="lni lni-cloud-refresh-clockwise p-1 pe-2"></i>Edit Marks</a></li>
+                        </ul>
+                    </li>
+
+                    <!-- Report Section -->
+                    <li class="sidebar-item">
+                        <a href="#Report" class="sidebar-link dropdown-toggle collapsed" data-bs-toggle="collapse" aria-expanded="false">
+                            <i class="lni lni-bar-chart-4 p-1 pe-2"></i>
+                            <span>Report</span>
+                            <i class="lni lni-chevron-down ms-auto dropdown-icon"></i>
+                        </a>
+                        <ul id="Report" class="collapse sidebar-dropdown">
+                            <li><a href="PrintMarksheet.aspx" class="sidebar-link"><i class="lni lni-printer p-1 pe-2"></i>Print Marksheet</a></li>
+                            <li><a href="ShowAllStudentMarks.aspx" class="sidebar-link"><i class="lni lni-monitor p-1 pe-2"></i>Show All</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </aside>
+
+
+            <!-- Main Content -->
+            <div class="main overflow-y-scroll" style="height: 100vh">
+
+                <!-- Navbar -->
+                <nav class="navbar navbar-expand-lg border-bottom shadow no-print">
+                    <div class="container-fluid d-flex justify-content-between">
+                        <button class="toggler-btn" type="button">
+                            <i class="lni lni-align-text-left"></i>
+                        </button>
+                        <div class="dropdown">
+                            <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="lni lni-user-4"></i>
+                                <asp:Label ID="lblUserName" runat="server" Text="Admin" CssClass="ms-2"></asp:Label>
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="MyProfile.aspx">Profile</a></li>
+                                <li><a class="dropdown-item" href="Settings.aspx">Settings</a></li>
+                                <li>
+                                    <hr class="dropdown-divider" />
+                                </li>
+                                <li>
+                                    <asp:Button Text="Logout" ID="btnLogout" CssClass="dropdown-item" runat="server" OnClick="btnLogout_Click" />
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+
+                <!-- Page Body -->
+                <main class="p-3 mb-5">
+                    <asp:ContentPlaceHolder ID="body" runat="server"></asp:ContentPlaceHolder>
+                </main>
+            </div>
+        </div>
+        <div class="sidebar-overlay"></div>
+    </form>
+
+    <!-- JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        //document.querySelector(".toggler-btn").addEventListener("click", function () {
+        //    document.querySelector("#sidebar").classList.toggle("collapsed");
+        //});
+
+
+        const sidebar = document.querySelector("#sidebar");
+        const overlay = document.querySelector(".sidebar-overlay");
+        const toggler = document.querySelector(".toggler-btn");
+
+        toggler.addEventListener("click", function () {
+            sidebar.classList.toggle("show");
+            overlay.classList.toggle("active");
+        });
+
+        overlay.addEventListener("click", function () {
+            sidebar.classList.remove("show");
+            overlay.classList.remove("active");
+        });
+    </script>
+</body>
+</html>

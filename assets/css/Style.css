@@ -1,0 +1,60 @@
+﻿.hero-bg {
+    background-image: url('../images/hero-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+}
+.navbar-brand {
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+.w-10 {
+    width: 10% !important;
+    padding: 0;
+    margin: 0;
+    
+}
+.thick {
+    border-top: 5px solid #ffc107;
+    margin: 0;
+    padding: 0;
+}
+.bg-features {
+    background-color: #dcf2f5;
+}
+.text-align {
+    text-align: justify;
+}
+.story-script-regular {
+    font-family: "Dancing Script", cursive;
+    font-weight: 600;
+    font-style: normal;
+}
+.bg-contact {
+    background-color: #f8f9fa;
+    justify-content: center;
+    display: flex;
+}
+.w-70 {
+    width: 67% !important;  
+}
+@media (max-width: 576px) {
+    .form-label {
+        font-size: 0.9rem;
+    }
+
+    .btn {
+        width: 100%; /* full-width login button on small devices */
+    }
+
+    .card-body img {
+        max-width: 80%; /* shrink logo a bit */
+    }
+}
