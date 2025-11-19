@@ -25,12 +25,12 @@ SchoolNest is a modern web-based school management platform designed to simplify
 
 ## 📂 Project Structure
 
-SchoolNest/
-│── Default.aspx
-│── About.aspx
-│── Contact.aspx
-│── Login.aspx
-│── MasterPage.master
-│── Content/
+SchoolNest/<br/>
+│── Default.aspx<br/>
+│── About.aspx<br/>
+│── Contact.aspx<br/>
+│── Login.aspx<br/>
+│── MasterPage.master<br/>
+│── Content/<br/>
 │── Scripts/
 │── Images/
