@@ -32,5 +32,5 @@ SchoolNest/<br/>
 │── Login.aspx<br/>
 │── MasterPage.master<br/>
 │── Content/<br/>
-│── Scripts/
-│── Images/
+│── Scripts/<br/>
+│── Images/<br/>
